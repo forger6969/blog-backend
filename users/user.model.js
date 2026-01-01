@@ -18,6 +18,7 @@ const userSchema = mongoose.Schema({
   postCount:{type:Number , default:0},
 
   password:{type:String , required:true}
+  
 });
 
 const User = mongoose.model("User" , userSchema)
