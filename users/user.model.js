@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema({
   showedName: {
     type: String,
     default: function () {
-     return this.username;
+      return this.username;
     },
   },
   followers: [{ type: Schema.Types.ObjectId, ref: "User" }],
@@ -14,12 +14,11 @@ const userSchema = mongoose.Schema({
   followersCount: { type: Number, default: 0 },
   followingCount: { type: Number, default: 0 },
 
-  posts:[{type:Schema.Types.ObjectId , ref:"Post"}],
-  postCount:{type:Number , default:0},
+  posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
+  postCount: { type: Number, default: 0 },
 
-  password:{type:String , required:true}
-  
+  password: { type: String, required: true , select:false },
 });
 
-const User = mongoose.model("User" , userSchema)
-module.exports = User
+const User = mongoose.model("User", userSchema);
+module.exports = User;
