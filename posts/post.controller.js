@@ -2,13 +2,24 @@ const User = require("../users/user.model");
 const Comment = require("./comment.model");
 const Post = require("./post.model");
 
-const getAllPosts = async (req, res) => {
+const getAllMyPosts = async (req, res) => {
   try {
     const { id } = req.user;
 
     const posts = await Post.find({ author: id });
 
     res.json({ succes: true, posts });
+  } catch (err) {
+    res.status(500).json({ succes: false, message: err.message });
+  }
+};
+
+const getAllPosts = async (req, res) => {
+  try {
+
+    const allPosts = await Post.find()
+    res.json({succes:true , allPosts})
+
   } catch (err) {
     res.status(500).json({ succes: false, message: err.message });
   }
@@ -106,10 +117,10 @@ const addComment = async (req, res) => {
     post.commentsCount += 1;
     post.save();
 
-    res.json({succes:true , message:"Comment added!"})
+    res.json({ succes: true, message: "Comment added!" });
   } catch (err) {
     res.status(500).json({ succes: false, message: err.message });
   }
 };
-
-module.exports = { createPost, getAllPosts, like , addComment};
+getAllPosts;
+module.exports = { createPost, getAllMyPosts, like, addComment,getAllPosts };

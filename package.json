@@ -11,5 +11,26 @@
     "multer-storage-cloudinary": "^4.0.0",
     "nodemon": "^3.1.11",
     "zod": "^4.3.4"
-  }
+  },
+  "name": "blog-backend",
+  "version": "1.0.0",
+  "description": "![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-32325D?style=for-the-badge&logo=jsonwebtokens&logoColor=white)",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forger6969/blog-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/forger6969/blog-backend/issues"
+  },
+  "homepage": "https://github.com/forger6969/blog-backend#readme"
 }
