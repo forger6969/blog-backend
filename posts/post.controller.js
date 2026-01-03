@@ -17,7 +17,7 @@ const getAllMyPosts = async (req, res) => {
 const getAllPosts = async (req, res) => {
   try {
 
-    const allPosts = await Post.find().populate("author")
+    const allPosts = await Post.find().populate("author").populate("comments")
     res.json({succes:true , allPosts})
 
   } catch (err) {
