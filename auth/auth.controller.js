@@ -14,6 +14,7 @@ const registerUser = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({ password: hashedPassword, username, email });
     await user.save();
+console.log(req);
 
     res.status(201).json({ succes: true });
   } catch (err) {
@@ -46,15 +47,13 @@ const loginUser = async (req, res) => {
       expiresIn: "1h",
     });
 
-    res.json({ succes: true, token , id:user._id});
+    res.json({ succes: true, token, id: user._id });
   } catch (err) {
     res.status(500).json({ succes: false, message: err.message });
   }
 };
 
-
-
 module.exports = {
-    registerUser,
-    loginUser
-}
+  registerUser,
+  loginUser,
+};

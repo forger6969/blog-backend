@@ -16,10 +16,8 @@ const getAllMyPosts = async (req, res) => {
 
 const getAllPosts = async (req, res) => {
   try {
-
-    const allPosts = await Post.find().populate("author").populate("comments")
-    res.json({succes:true , allPosts})
-
+    const allPosts = await Post.find().populate("author").populate("comments");
+    res.json({ succes: true, allPosts });
   } catch (err) {
     res.status(500).json({ succes: false, message: err.message });
   }
@@ -123,4 +121,4 @@ const addComment = async (req, res) => {
   }
 };
 getAllPosts;
-module.exports = { createPost, getAllMyPosts, like, addComment,getAllPosts };
+module.exports = { createPost, getAllMyPosts, like, addComment, getAllPosts };

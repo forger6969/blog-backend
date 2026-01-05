@@ -8,11 +8,10 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET,
 });
 
-
 const postStorage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "posts", 
+    folder: "posts",
     format: async (req, file) => "jpg",
     public_id: (req, file) => Date.now() + "-" + file.originalname,
   },
@@ -21,7 +20,7 @@ const postStorage = new CloudinaryStorage({
 const avatarStorage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "avatars", 
+    folder: "avatars",
     format: async (req, file) => "jpg",
     public_id: (req, file) => "avatar-" + req.user.id,
   },
